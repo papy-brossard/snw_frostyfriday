@@ -1,10 +1,7 @@
 -- set vars
 set (wrk_role, wrk_db, wrk_wh) = ('RF_DCU_CORP_LEARNER', 'DCU_CORP_LEARNING', 'TEST');
 
-use role accountadmin;
-grant usage on warehouse identifier($wrk_wh) to role identifier($wrk_role);
-grant create integration on account to role identifier($wrk_role);
-
+-- for this exercice, $wrk_role must have create integration privilege
 -- set query context
 use role identifier($wrk_role);
 use warehouse identifier($wrk_wh);
